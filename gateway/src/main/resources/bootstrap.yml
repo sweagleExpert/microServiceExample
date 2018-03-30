@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888
+      fail-fast: true
+
+# TODO: investigate why these are not retrieved right directly from Sweagle
+zuul.routes.weather-service.path: /weather/**
+zuul.routes.weather-service.serviceId: weather-service
+zuul.routes.weather-service.stripPrefix: false
+zuul.routes.weather-service.sensitiveHeaders:
+

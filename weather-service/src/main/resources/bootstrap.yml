@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: weather-service
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888
+      fail-fast: true

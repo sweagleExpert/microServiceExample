@@ -1,0 +1,17 @@
+###
+#   Eureka Settings
+###
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+###
+#   Kafka Settings for Spring Cloud Bus
+###
+#spring:
+#  kafka:
+#    bootstrap-servers: http://127.0.0.1:9092
+

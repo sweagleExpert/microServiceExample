@@ -1,0 +1,8 @@
+server:
+  context-path: /weather
+  port: 10600
+
+###
+#   Custom
+###
+default-city: Athens

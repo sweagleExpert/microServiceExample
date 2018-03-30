@@ -1,0 +1,25 @@
+server:
+  port: 4000
+
+###
+#   Ribbon Settings
+###
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+###
+#   Zuul Settings
+###
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    weather-service:
+      path: /weather/**
+      serviceId: weather-service
+      stripPrefix: false
+      sensitiveHeaders:
