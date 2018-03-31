@@ -1,14 +1,15 @@
 # Spring-cloud Microservices with SWEAGLE demo
 
 This is an example spring cloud project consisting of the following microservices:
-- config: the "Sweagle-enabled" Config Server
-- gateway: the API Gateway (Zuul)
-- registry: the Service Discovery Server (Eureka)
-- weather-service: an example service with a REST endpoint for demo purposes
+- [config](https://github.com/sweagleExpert/microServiceExample/tree/master/config): the "Sweagle-enabled" Config Server
+- [gateway](https://github.com/sweagleExpert/microServiceExample/tree/master/gateway): the API Gateway (Zuul)
+- [registry](https://github.com/sweagleExpert/microServiceExample/tree/master/registry): the Service Discovery Server (Eureka)
+- [weather-service](https://github.com/sweagleExpert/microServiceExample/tree/master/weather-service): an example service with a REST endpoint for 
+demo purposes
 
-The microservices: gateway, registry and weather-service do not hold locally any properties except the URL of the Config server.
-The Config server is the one who is actually communicating with Sweagle to retrieve and provide the properties of all 3 services depending on the 
-profile enabled
+The microservices: *gateway*, *registry* and *weather-service* do not hold locally any properties except the URL of the *config* service.
+The *config* service is the one who is actually communicating with Sweagle to retrieve and provide the properties of all 3 services depending on the 
+profile enabled. The `application.yaml` file of the *config* service contains the necessary settings for interfacing with Sweagle.
 
 # Pre-requisites
 
@@ -42,6 +43,16 @@ Run each service in different console/terminal. The recommended order is the fol
 ### Eureka Dashboard ###
 Once you have started all the services, check [Eureka dashboard](http://localhost:8761) 
 
+### Tests ###
+
+- Perform an HTTP GET at: http://localhost:4000/weather/default and view the String response
+- Go in Sweagle, start a data change-set and modify the property `defaultCity` for the [weather-service]. Approve and store.
+- Stop/start the [weather-service]
+- Perform an HTTP GET at: http://localhost:4000/weather/default. Notice that the String response has changed.
+
+> NOTE: in case we have properties in Beans annotated with `@RefreshScope`, then no re-starts are necessary. For more information check 
+[Getting Started · Centralized Configuration - Spring](https://spring.io/guides/gs/centralized-configuration/)
+
 # References
-[spring-cloud-config-server-sweagle](https://github.com/sweagleExpert/envRepository)
-[sweagle](https://www.sweagle.com/)
+- [spring-cloud-config-server-sweagle](https://github.com/sweagleExpert/envRepository)
+- [sweagle](https://www.sweagle.com/)
