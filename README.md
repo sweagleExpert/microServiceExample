@@ -17,7 +17,7 @@ the profile enabled. The `application.yaml` file of the *config* service contain
 - Uploaded configuration data in Sweagle for each and every microservice and environment profile (e.g. default, development, production etc.)
 - Published metadata parser taking as parameters the microservice application's name and the environment profile's name
 - Check out the 1.0.0-SNAPSHOT version of [spring-cloud-config-server-sweagle](https://github.com/sweagleExpert/envRepository)
-- Build and install the artifact into your maven repository
+- Build and install the artifact into your maven repository. You may find instructions [here](https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html)
 
 
 # Running the demo
