@@ -16,9 +16,10 @@ the profile enabled. The `application.yaml` file of the *config* service contain
 
 - Java 8 and Maven
 - Active Sweagle account
-- Uploaded configuration data in Sweagle for each and every microservice and environment profile (e.g. default, development, production etc.)
+- Upload configuration data in Sweagle for each and every microservice and environment profile (e.g. default, development, production etc.). 
+Following are instructions/screenshots for profile: 'default'
 
-**The following Key names & Key values should be inherited in every node in the dimension** 
+**Key names & Key values should bto e inherited in every node in the dimension** 
 
 >
 > | Key | Value | 
@@ -67,10 +68,11 @@ the profile enabled. The `application.yaml` file of the *config* service contain
 > |server.context-path	| /weather|
 > |server.port	| 10600 |
 
-- Published metadata parser taking as parameters the microservice application's name and the environment profile's name
+- Create and publish metadata parser taking as parameters the microservice application's name and the environment profile's name
 ![](https://github.com/sweagleExpert/microServiceExample/blob/master/assets/exporter-1.png?raw=true)
 
 ![](https://github.com/sweagleExpert/microServiceExample/blob/master/assets/exporter-2.png?raw=true)
+
 - Check out the 1.0.0-SNAPSHOT version of [spring-cloud-config-server-sweagle](https://github.com/sweagleExpert/envRepository)
 - Build and install the artifact into your maven repository. You may find instructions [here](https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html)
 
