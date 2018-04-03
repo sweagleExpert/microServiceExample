@@ -68,8 +68,7 @@ Following are instructions/screenshots for profile: 'default'
 > |server.context-path	| /weather|
 > |server.port	| 10600 |
 
-- Create and publish metadata parser taking as parameters the microservice application's name and the environment profile's name
-![](https://github.com/sweagleExpert/microServiceExample/blob/master/assets/exporter-1.png?raw=true)
+- Create and publish metadata parser taking as parameters the microservice application's name and the environment profile's name:
 
 ![](https://github.com/sweagleExpert/microServiceExample/blob/master/assets/exporter-2.png?raw=true)
 
