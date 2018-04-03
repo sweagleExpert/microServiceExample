@@ -19,7 +19,7 @@ the profile enabled. The `application.yaml` file of the *config* service contain
 - Upload configuration data in Sweagle for each and every microservice and environment profile (e.g. default, development, production etc.). 
 Following are instructions/screenshots for profile: 'default'
 
-**Key names & Key values should bto e inherited in every node in the dimension** 
+**Key names & values should to be inherited in every node in the dimension** 
 
 >
 > | Key | Value | 
