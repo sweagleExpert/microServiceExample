@@ -1,3 +1,4 @@
+
 # Spring-cloud Microservices with SWEAGLE demo
 
 This is an example spring cloud project consisting of the following microservices:
@@ -16,7 +17,60 @@ the profile enabled. The `application.yaml` file of the *config* service contain
 - Java 8 and Maven
 - Active Sweagle account
 - Uploaded configuration data in Sweagle for each and every microservice and environment profile (e.g. default, development, production etc.)
+
+**The following Key names & Key values should be inherited in every node in the dimension** 
+
+>
+> | Key | Value | 
+> | ------ | :------: |
+> | eureka.client.serviceUrl.defaultZone  | http://127.0.0.1:8761/eureka/ |
+> | eureka.instance.prefer-ip-address     | true |
+
+
+![](https://github.com/sweagleExpert/microServiceExample/blob/master/assets/data-model.png?raw=true)
+
+
+
+**gateway**
+> | Key | Value | 
+> | ------ | :------: |
+> |eureka.instance.prefer-ip-address | true|
+> | ribbon.ConnectTimeout  | 20000 |
+> | ribbon.ReadTimeout | 20000 | 
+> | server.port  | 4000 |
+> | eureka.client.serviceUrl.defaultZone  | http://127.0.0.1:8761/eureka/ |
+> | zuul.host.socket-timeout-millis  | 20000 |
+> | zuul.ignoredServices  | '*' |
+> | zuul.routes.weather-service.path  | /weather/** |
+> | zuul.routes.weather-service.sensitiveHeaders |  | 
+> | zuul.routes.weather-service.serviceId  | weather-service |
+> | zuul.routes.weather-service.stripPrefix  | false |
+
+
+**registry** 
+
+> | Key | Value | 
+> | ------ | :------: |
+> |eureka.client.fetch-registry  | false |
+> | eureka.client.register-with-eureka  | false |
+> | eureka.client.server.waitTimeInMsWhenSyncEmpty | 0 | 
+> | eureka.client.serviceUrl.defaultZone  | http://127.0.0.1:8761/eureka/ |
+> | eureka.instance.prefer-ip-address  | true |
+> | server.port  | 8761 |
+
+**weather-service**
+> | Key | Value | 
+> | ------ | :------: |
+> |default-city | Brussels
+> |eureka.client.serviceUrl.defaultZone | http://127.0.0.1:8761/eureka/ |
+> |eureka.instance.prefer-ip-address	| true |
+> |server.context-path	| /weather|
+> |server.port	| 10600 |
+
 - Published metadata parser taking as parameters the microservice application's name and the environment profile's name
+![](https://github.com/sweagleExpert/microServiceExample/blob/master/assets/exporter-1.png?raw=true)
+
+![](https://github.com/sweagleExpert/microServiceExample/blob/master/assets/exporter-2.png?raw=true)
 - Check out the 1.0.0-SNAPSHOT version of [spring-cloud-config-server-sweagle](https://github.com/sweagleExpert/envRepository)
 - Build and install the artifact into your maven repository. You may find instructions [here](https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html)
 
