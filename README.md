@@ -13,6 +13,7 @@ the profile enabled. The `application.yaml` file of the *config* service contain
 
 # Pre-requisites
 
+- Java 8 and Maven
 - Active Sweagle account
 - Uploaded configuration data in Sweagle for each and every microservice and environment profile (e.g. default, development, production etc.)
 - Published metadata parser taking as parameters the microservice application's name and the environment profile's name
@@ -22,7 +23,12 @@ the profile enabled. The `application.yaml` file of the *config* service contain
 
 # Running the demo
 
-Run each service in different console/terminal. The recommended order is the following:
+Checkout the latest version of [microServiceExample](https://github.com/sweagleExpert/microServiceExample) and build the project using maven:
+```aidl
+cd <dir>
+mvn clean package
+```
+Run each microservice in different console/terminals. The recommended order is the following:
 #### 1. Config Service
      cd <dir>/config/
      mvn spring-boot:run
